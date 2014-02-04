@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SinatraPotatoes</title>
+  </head>
+  <body>
+    <h1>All Movies</h1>
+    <table id="movies">
+      <thead>
+        <tr>
+          <th> Movie Title</th>
+          <th> Rating</th>
+          <th> More Info</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @movies.each do |movie| %>
+        <tr>
+          <td><%= movie.title %></td>
+          <td><%= movie.rating %></td>
+          <td>
+            <a href="/movies/#{movie.id}">More about <%= movie.title %></a>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <p>
+      <a href="/movies/new">Add new movie</a>
+    </p>
+  </body>
+</html>
+
